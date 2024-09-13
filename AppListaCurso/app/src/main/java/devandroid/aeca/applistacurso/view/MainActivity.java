@@ -1,20 +1,25 @@
 package devandroid.aeca.applistacurso.view;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import devandroid.aeca.applistacurso.R;
+import devandroid.aeca.applistacurso.controller.ProdutoController;
 import devandroid.aeca.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_listavip";
+
+    ProdutoController controller;
     Pessoa pessoa;
 
     EditText editName;
@@ -35,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor listaVip = preferences.edit();
+
+        controller = new ProdutoController();
+        pessoa = new Pessoa();
 
         editName = findViewById(R.id.editName);
         editSecondName = findViewById(R.id.editSecondName);
@@ -76,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefoneContato(editTelefone.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
+
+                listaVip.putString("primeiroNome:", pessoa.getPrimeiroNome());
+                listaVip.putString("sobreNome:", pessoa.getSobreNome());
+                listaVip.putString("nomeProduto:", pessoa.getProdutoDesejado());
+                listaVip.putString("telefoneContato:", pessoa.getTelefoneContato());
+                listaVip.apply();
+
+                controller.salvar(pessoa);
             }
         });
     }
