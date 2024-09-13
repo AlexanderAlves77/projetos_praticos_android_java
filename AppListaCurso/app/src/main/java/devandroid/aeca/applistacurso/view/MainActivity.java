@@ -16,7 +16,6 @@ import devandroid.aeca.applistacurso.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
-    // String dadosPessoa;
 
     EditText editName;
     EditText editSecondName;
@@ -36,13 +35,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-
-        pessoa = new Pessoa();
-        pessoa.setPrimeiroNome("Alexander");
-        pessoa.setSobreNome("Alves");
-        pessoa.setProdutoDesejado("Bicicleta");
-        pessoa.setTelefoneContato("21-999998888");
 
         editName = findViewById(R.id.editName);
         editSecondName = findViewById(R.id.editSecondName);
