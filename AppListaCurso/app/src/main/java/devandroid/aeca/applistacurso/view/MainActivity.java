@@ -1,5 +1,10 @@
 package devandroid.aeca.applistacurso.view;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -11,6 +16,15 @@ import devandroid.aeca.applistacurso.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
+    // String dadosPessoa;
+
+    EditText editName;
+    EditText editSecondName;
+    EditText editProduct;
+    EditText editTelefone;
+    Button btnLimpar;
+    Button btnSalvar;
+    Button btnFinalizar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +37,54 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         pessoa = new Pessoa();
         pessoa.setPrimeiroNome("Alexander");
         pessoa.setSobreNome("Alves");
         pessoa.setProdutoDesejado("Bicicleta");
         pessoa.setTelefoneContato("21-999998888");
+
+        editName = findViewById(R.id.editName);
+        editSecondName = findViewById(R.id.editSecondName);
+        editProduct = findViewById(R.id.editProduct);
+        editTelefone = findViewById(R.id.editTelefone);
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
+
+        editName.setText(pessoa.getPrimeiroNome());
+        editSecondName.setText(pessoa.getSobreNome());
+        editProduct.setText(pessoa.getProdutoDesejado());
+        editTelefone.setText(pessoa.getTelefoneContato());
+
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editName.setText("");
+                editSecondName.setText("");
+                editProduct.setText("");
+                editTelefone.setText("");
+            }
+        });
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Volte sempre", Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pessoa.setPrimeiroNome(editName.getText().toString());
+                pessoa.setSobreNome(editSecondName.getText().toString());
+                pessoa.setProdutoDesejado(editProduct.getText().toString());
+                pessoa.setTelefoneContato(editTelefone.getText().toString());
+
+                Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
