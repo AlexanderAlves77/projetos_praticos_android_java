@@ -1,5 +1,6 @@
 package devandroid.aeca.applistacurso.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +14,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.aeca.applistacurso.R;
+import devandroid.aeca.applistacurso.controller.PessoaController;
 import devandroid.aeca.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
-    Pessoa pessoa, outraPessoa;
+    PessoaController pessoaController;
+    Pessoa pessoa;
 
     EditText editPrimeiroNome;
     EditText editSobreNomeAluno;
@@ -39,26 +42,25 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        pessoaController = new PessoaController(MainActivity.this);
+        pessoaController.toString();
+
         pessoa = new Pessoa();
-        /*
-        pessoa.setPrimeiroNome("Alexander");
-        pessoa.setSobreNome("Alves");
-        pessoa.setCursoDesejado("Android");
-        pessoa.setTelefoneContato("22-981351510");
-        */
+        pessoaController.buscar(pessoa);
+
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobreNomeAluno = findViewById(R.id.editSobreNomeAluno);
         editNomeCurso = findViewById(R.id.editNomeCurso);
         editTelefoneContato = findViewById(R.id.editTelefoneContato);
 
-        btnLimpar = findViewById(R.id.btnLimpar);
-        btnSalvar = findViewById(R.id.btnSalvar);
-        btnFinalizar = findViewById(R.id.btnFinalizar);
-
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobreNomeAluno.setText(pessoa.getSobreNome());
         editNomeCurso.setText(pessoa.getCursoDesejado());
         editTelefoneContato.setText(pessoa.getTelefoneContato());
+
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 editSobreNomeAluno.setText("");
                 editNomeCurso.setText("");
                 editTelefoneContato.setText("");
+
+                pessoaController.limpar();
             }
         });
 
@@ -87,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Salvo "+ pessoa.toString(), Toast.LENGTH_SHORT).show();
+
+                pessoaController.salvar(pessoa);
             }
         });
     }
