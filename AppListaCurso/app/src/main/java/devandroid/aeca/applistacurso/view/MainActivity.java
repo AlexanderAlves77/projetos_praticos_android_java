@@ -1,29 +1,29 @@
 package devandroid.aeca.applistacurso.view;
-import android.content.SharedPreferences;
+
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
 import devandroid.aeca.applistacurso.R;
-import devandroid.aeca.applistacurso.controller.ProdutoController;
 import devandroid.aeca.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
-    ProdutoController controller;
-    Pessoa pessoa;
+    Pessoa pessoa, outraPessoa;
 
-    EditText editName;
-    EditText editSecondName;
-    EditText editProduct;
-    EditText editTelefone;
+    EditText editPrimeiroNome;
+    EditText editSobreNomeAluno;
+    EditText editNomeCurso;
+    EditText editTelefoneContato;
+
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
@@ -39,40 +39,41 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        controller = new ProdutoController(MainActivity.this);
-        controller.toString();
         pessoa = new Pessoa();
-        controller.buscar(pessoa);
+        /*
+        pessoa.setPrimeiroNome("Alexander");
+        pessoa.setSobreNome("Alves");
+        pessoa.setCursoDesejado("Android");
+        pessoa.setTelefoneContato("22-981351510");
+        */
+        editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
+        editSobreNomeAluno = findViewById(R.id.editSobreNomeAluno);
+        editNomeCurso = findViewById(R.id.editNomeCurso);
+        editTelefoneContato = findViewById(R.id.editTelefoneContato);
 
-        editName = findViewById(R.id.editName);
-        editSecondName = findViewById(R.id.editSecondName);
-        editProduct = findViewById(R.id.editProduct);
-        editTelefone = findViewById(R.id.editTelefone);
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
 
-        editName.setText(pessoa.getPrimeiroNome());
-        editSecondName.setText(pessoa.getSobreNome());
-        editProduct.setText(pessoa.getProdutoDesejado());
-        editTelefone.setText(pessoa.getTelefoneContato());
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobreNomeAluno.setText(pessoa.getSobreNome());
+        editNomeCurso.setText(pessoa.getCursoDesejado());
+        editTelefoneContato.setText(pessoa.getTelefoneContato());
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editName.setText("");
-                editSecondName.setText("");
-                editProduct.setText("");
-                editTelefone.setText("");
-
-                controller.limpar();
+                editPrimeiroNome.setText("");
+                editSobreNomeAluno.setText("");
+                editNomeCurso.setText("");
+                editTelefoneContato.setText("");
             }
         });
 
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Volte sempre", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Volte Sempre", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -80,16 +81,13 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pessoa.setPrimeiroNome(editName.getText().toString());
-                pessoa.setSobreNome(editSecondName.getText().toString());
-                pessoa.setProdutoDesejado(editProduct.getText().toString());
-                pessoa.setTelefoneContato(editTelefone.getText().toString());
+                pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
+                pessoa.setSobreNome(editNomeCurso.getText().toString());
+                pessoa.setCursoDesejado(editNomeCurso.getText().toString());
+                pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
 
-                Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
-                controller.salvar(pessoa);
+                Toast.makeText(MainActivity.this, "Salvo "+ pessoa.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-
-        Log.i("POOAndroid","Objeto pessoa: "+pessoa.toString());
     }
 }
