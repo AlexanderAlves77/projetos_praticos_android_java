@@ -47,7 +47,8 @@ public class GasEtaActivity extends AppCompatActivity {
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                editGasolina.setText("");
+                editEtanol.setText("");
             }
         });
 
