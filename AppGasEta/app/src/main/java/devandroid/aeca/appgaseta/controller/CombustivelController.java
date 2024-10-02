@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 
 import devandroid.aeca.appgaseta.model.Combustivel;
 import devandroid.aeca.appgaseta.view.GasEtaActivity;
-import devandroid.aeca.appgaseta.view.MainActivity;
 
 public class CombustivelController {
 
