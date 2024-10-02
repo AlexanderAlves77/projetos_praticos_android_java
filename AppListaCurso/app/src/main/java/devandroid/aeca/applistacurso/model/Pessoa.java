@@ -10,9 +10,7 @@ public class Pessoa {
     private String telefoneContato;
 
     // Constructor
-    public Pessoa() {
-
-    }
+    public Pessoa() {}
 
     public String getPrimeiroNome() { return primeiroNome; }
 
