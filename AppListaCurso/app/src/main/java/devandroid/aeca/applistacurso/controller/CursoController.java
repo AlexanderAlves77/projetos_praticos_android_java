@@ -18,8 +18,19 @@ public class CursoController {
         listCursos.add(new Curso("Javascript"));
         listCursos.add(new Curso("Dart"));
         listCursos.add(new Curso("Flutter"));
-        listCursos.add(new Curso("C#"));
+        listCursos.add(new Curso("Python"));
 
         return listCursos;
+    }
+
+    public ArrayList<String> dadosParaSpinner() {
+
+        ArrayList<String> dados = new ArrayList<>();
+
+        for (int i = 0; i < getListaDeCursos().size(); i++) {
+            Curso objeto = (Curso) getListaDeCursos().get(i);
+            dados.add(objeto.getNomeDoCursoDesejado());
+        }
+        return dados;
     }
 }
