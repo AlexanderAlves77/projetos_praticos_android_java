@@ -13,14 +13,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
+
 import devandroid.aeca.applistacurso.R;
+import devandroid.aeca.applistacurso.controller.CursoController;
 import devandroid.aeca.applistacurso.controller.PessoaController;
+import devandroid.aeca.applistacurso.model.Curso;
 import devandroid.aeca.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
     PessoaController pessoaController;
+    CursoController cursoController;
     Pessoa pessoa;
+    List<Curso> listaDeCursos;
 
     EditText editPrimeiroNome;
     EditText editSobreNomeAluno;
@@ -44,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
         pessoaController = new PessoaController(MainActivity.this);
         pessoaController.toString();
+
+        cursoController = new CursoController();
+        listaDeCursos = cursoController.getListaDeCursos();
 
         pessoa = new Pessoa();
         pessoaController.buscar(pessoa);
