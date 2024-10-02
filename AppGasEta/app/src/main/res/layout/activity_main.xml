@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editNomeCurso" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -87,7 +87,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultado"
         app:layout_constraintVertical_bias="0.266"  />
 
     <Button android:id="@+id/btnLimpar"
