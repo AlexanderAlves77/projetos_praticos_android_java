@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 public class Pessoa {
 
+    private int id;
     private String primeiroNome;
     private String sobreNome;
     private String cursoDesejado;
@@ -12,28 +13,44 @@ public class Pessoa {
     // Constructor
     public Pessoa() {}
 
-    public String getPrimeiroNome() { return primeiroNome; }
-
-    public void setPrimeiroNome(String nome) {
-        this.primeiroNome = nome;
+    public int getId() {
+        return id;
     }
 
-    public String getSobreNome() { return sobreNome; }
-
-    public void setSobreNome(String nome) {
-        this.sobreNome = nome;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getCursoDesejado() { return cursoDesejado; }
-
-    public void setCursoDesejado(String curso) {
-        this.cursoDesejado = curso;
+    public String getPrimeiroNome() {
+        return primeiroNome;
     }
 
-    public String getTelefoneContato() { return telefoneContato; }
+    public void setPrimeiroNome(String primeiroNome) {
+        this.primeiroNome = primeiroNome;
+    }
 
-    public void setTelefoneContato(String telefone) {
-        this.telefoneContato = telefone;
+    public String getSobreNome() {
+        return sobreNome;
+    }
+
+    public void setSobreNome(String sobreNome) {
+        this.sobreNome = sobreNome;
+    }
+
+    public String getCursoDesejado() {
+        return cursoDesejado;
+    }
+
+    public void setCursoDesejado(String cursoDesejado) {
+        this.cursoDesejado = cursoDesejado;
+    }
+
+    public String getTelefoneContato() {
+        return telefoneContato;
+    }
+
+    public void setTelefoneContato(String telefoneContato) {
+        this.telefoneContato = telefoneContato;
     }
 
     // To String - Para Textos - Para Strings de Caracteres

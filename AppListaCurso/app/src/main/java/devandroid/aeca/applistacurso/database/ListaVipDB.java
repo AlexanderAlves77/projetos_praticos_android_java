@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import devandroid.aeca.applistacurso.model.Curso;
+import devandroid.aeca.applistacurso.model.Pessoa;
 
 public class ListaVipDB extends SQLiteOpenHelper {
 
@@ -47,22 +48,23 @@ public class ListaVipDB extends SQLiteOpenHelper {
         db.insert(tabela, null, dados);
     }
 
-    public List<Combustivel> listarDados() {
-        List<Combustivel> lista = new ArrayList<>();
+    public List<Pessoa> listarDados() {
+        List<Pessoa> lista = new ArrayList<>();
 
         // Representa um registro que está salvo na tabela Combustivel
         // do Banco de Dados da Aplicação
-        Combustivel registro;
-        String querySQL = "SELECT * FROM Combustivel";
+        Pessoa registro;
+        String querySQL = "SELECT * FROM Pessoa";
         cursor = db.rawQuery(querySQL, null);
 
         if (cursor.moveToFirst()) {
             do {
-                registro = new Combustivel();
+                registro = new Pessoa();
                 registro.setId(cursor.getInt(0));
-                registro.setNomeDoCombustivel(cursor.getString(1));
-                registro.setPrecoDoCombustivel(cursor.getDouble(2));
-                registro.setRecomendacao(cursor.getString(3));
+                registro.setPrimeiroNome(cursor.getString(1));
+                registro.setSobreNome(cursor.getString(2));
+                registro.setCursoDesejado(cursor.getString(3));
+                registro.setTelefoneContato(cursor.getString(3));
 
                 lista.add(registro);
             }
