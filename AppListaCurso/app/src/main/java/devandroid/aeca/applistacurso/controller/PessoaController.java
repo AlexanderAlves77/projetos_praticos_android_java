@@ -73,4 +73,8 @@ public class PessoaController extends ListaVipDB {
 
         alterarObjeto("Pessoa", dados);
     }
+
+    public void deletar(int id) {
+        deletarObjeto("Pessoa", id);
+    }
 }
