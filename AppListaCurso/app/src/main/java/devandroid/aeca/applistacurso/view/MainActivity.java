@@ -14,7 +14,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import devandroid.aeca.applistacurso.R;
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         pessoaController.toString();
 
         pessoa = new Pessoa();
-        pessoaController.buscar(pessoa);
+        pessoaController.buscarDadosSharedPreferences(pessoa);
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobreNomeAluno = findViewById(R.id.editSobreNomeAluno);

@@ -48,7 +48,7 @@ public class PessoaController extends ListaVipDB {
         salvarObjeto("Pessoa", dados);
     }
 
-    public Pessoa buscar(Pessoa pessoa) {
+    public Pessoa buscarDadosSharedPreferences(Pessoa pessoa) {
         pessoa.setPrimeiroNome(preferences.getString("primeiroNome", "NA"));
         pessoa.setSobreNome(preferences.getString("sobreNome", "NA"));
         pessoa.setCursoDesejado(preferences.getString("cursoDesejado", "NA"));
@@ -60,5 +60,17 @@ public class PessoaController extends ListaVipDB {
     public void limpar() {
         listaVip.clear();
         listaVip.apply();
+    }
+
+    public void alterar(Pessoa pessoa) {
+        ContentValues dados = new ContentValues();
+
+        dados.put("id", pessoa.getId());
+        dados.put("primeiroNome", pessoa.getPrimeiroNome());
+        dados.put("sobreNome", pessoa.getSobreNome());
+        dados.put("cursoDesejado", pessoa.getCursoDesejado());
+        dados.put("telefoneContato", pessoa.getTelefoneContato());
+
+        alterarObjeto("Pessoa", dados);
     }
 }
