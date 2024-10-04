@@ -7,6 +7,6 @@ public interface ICrud {
     public void alterar();
 
     public void listar();
-    
+
     public void deletar();
 }
