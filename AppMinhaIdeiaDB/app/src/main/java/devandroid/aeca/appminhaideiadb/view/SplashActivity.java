@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,12 +13,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.aeca.appminhaideiadb.R;
+import devandroid.aeca.appminhaideiadb.controller.ClienteController;
+import devandroid.aeca.appminhaideiadb.core.AppUtil;
 import devandroid.aeca.appminhaideiadb.model.Cliente;
 
 public class SplashActivity extends AppCompatActivity {
 
     Cliente cliente;
-    String TAG = "APP_MINHA_IDEIA";
+    ClienteController clienteController;
+    TextView txtAppVersion;
     int waitingTime = 1000 * 5;
 
     @Override
@@ -31,7 +35,11 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
 
-        Log.d(TAG, "onCreate: Tela Splash Carregada...");
+        Log.d(AppUtil.TAG, "onCreate: Tela Splash Carregada...");
+        clienteController = new ClienteController();
+
+        txtAppVersion = findViewById(R.id.txtAppVersion);
+        txtAppVersion.setText(AppUtil.versaoDoAplicativo());
 
         changeScreen();
     }

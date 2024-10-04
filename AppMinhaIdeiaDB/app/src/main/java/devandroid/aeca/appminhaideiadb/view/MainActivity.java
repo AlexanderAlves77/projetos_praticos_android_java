@@ -11,11 +11,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.aeca.appminhaideiadb.R;
+import devandroid.aeca.appminhaideiadb.core.AppUtil;
 import devandroid.aeca.appminhaideiadb.model.Cliente;
 
 public class MainActivity extends AppCompatActivity {
 
-    String TAG = "APP_MINHA_IDEIA";
     TextView txtNome;
 
     @Override
@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Log.d(TAG, "onCreate: Tela Principal Carregada...");
+        Log.d(AppUtil.TAG, "onCreate: Tela Principal Carregada...");
 
         Bundle bundle = getIntent().getExtras();
 
-        Log.d(TAG, "onCreate: Nome..." + bundle.getString("nome"));
-        Log.d(TAG, "onCreate: Email..." + bundle.getString("email"));
+        Log.d(AppUtil.TAG, "onCreate: Nome..." + bundle.getString("nome"));
+        Log.d(AppUtil.TAG, "onCreate: Email..." + bundle.getString("email"));
 
         txtNome = findViewById(R.id.txtNome);
         txtNome.setText("Bem vindo..." + bundle.getString("nome"));
