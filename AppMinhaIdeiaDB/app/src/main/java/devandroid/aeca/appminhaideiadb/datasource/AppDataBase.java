@@ -1,5 +1,6 @@
 package devandroid.aeca.appminhaideiadb.datasource;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -35,5 +36,18 @@ public class AppDataBase extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public boolean insert(String tabela, ContentValues dados) {
+        db = getWritableDatabase();
+        boolean retorno = false;
+
+        try {
+            retorno = db.insert(tabela, null, dados) > 0;
+        }
+        catch(Exception err) {
+            Log.d(AppUtil.TAG, "insert: " + err.getMessage());
+        }
+        return retorno;
     }
 }

@@ -26,10 +26,10 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
     public boolean incluir(Cliente obj) {
         dadoDoObjeto = new ContentValues();
 
-        //dadoDoObjeto.put(ClienteDataModel.ID, obj.getId());
         dadoDoObjeto.put(ClienteDataModel.NOME, obj.getNome());
         dadoDoObjeto.put(ClienteDataModel.EMAIL, obj.getEmail());
-        return true;
+
+        return insert(ClienteDataModel.TABELA, dadoDoObjeto);
     }
 
     @Override
