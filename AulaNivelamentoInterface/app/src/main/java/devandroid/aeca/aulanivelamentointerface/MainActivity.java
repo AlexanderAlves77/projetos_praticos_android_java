@@ -10,6 +10,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    Cliente cliente;
+    Produto produto;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +23,20 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        cliente = new Cliente();
+        produto = new Produto();
+
+        cliente.setNome("Alexander");
+        cliente.setEmail("teste@teste.com.br");
+
+        produto.setNome("HD SSD 1TB");
+        produto.setFornecedor("DELL");
+
+        cliente.incluir();
+        cliente.alterar();
+
+        produto.listar();
+        produto.deletar();
     }
 }

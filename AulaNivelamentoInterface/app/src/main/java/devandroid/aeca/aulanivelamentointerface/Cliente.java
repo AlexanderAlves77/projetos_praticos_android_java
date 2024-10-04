@@ -1,7 +1,10 @@
 package devandroid.aeca.aulanivelamentointerface;
 
+import android.util.Log;
+
 public class Cliente implements ICrud {
 
+    private static final String TAG = "CRUD";
     private String nome;
     private String email;
 
@@ -23,21 +26,21 @@ public class Cliente implements ICrud {
 
     @Override
     public void incluir() {
-        
+        Log.i(TAG, "incluir: Cliente");
     }
 
     @Override
     public void alterar() {
-
+        Log.i(TAG, "alterar: Cliente");
     }
 
     @Override
     public void listar() {
-
+        Log.i(TAG, "listar: Cliente");
     }
 
     @Override
     public void deletar() {
-
+        Log.i(TAG, "deletar: Cliente");
     }
 }
