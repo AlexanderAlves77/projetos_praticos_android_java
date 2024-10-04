@@ -51,6 +51,20 @@ public class AppDataBase extends SQLiteOpenHelper {
         return retorno;
     }
 
+    public boolean update(String tabela, ContentValues dados) {
+        db = getWritableDatabase();
+        boolean retorno = false;
+
+        try {
+            retorno = db.update(tabela, dados,
+                    "id=?", new String[] {String.valueOf(dados.get("id"))}) > 0;
+        }
+        catch(Exception err) {
+            Log.d(AppUtil.TAG, "insert: " + err.getMessage());
+        }
+        return retorno;
+    }
+
     public boolean deleteById(String tabela, int id) {
         db = getWritableDatabase();
         boolean retorno = false;

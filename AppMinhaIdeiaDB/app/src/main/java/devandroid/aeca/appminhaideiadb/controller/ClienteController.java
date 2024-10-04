@@ -39,7 +39,8 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
         dadoDoObjeto.put(ClienteDataModel.ID, obj.getId());
         dadoDoObjeto.put(ClienteDataModel.NOME, obj.getNome());
         dadoDoObjeto.put(ClienteDataModel.EMAIL, obj.getEmail());
-        return true;
+
+        return update(ClienteDataModel.TABELA, dadoDoObjeto);
     }
 
     @Override
