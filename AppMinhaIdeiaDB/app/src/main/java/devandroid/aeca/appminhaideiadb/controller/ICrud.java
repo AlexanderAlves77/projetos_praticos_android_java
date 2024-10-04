@@ -1,12 +1,14 @@
 package devandroid.aeca.appminhaideiadb.controller;
 
-public interface ICrud {
+import java.util.List;
 
-    public void incluir();
+public interface ICrud<T> {
 
-    public void alterar();
+    public boolean incluir(T obj);
 
-    public void listar();
+    public boolean alterar(T obj);
 
-    public void deletar();
+    public List<T> listar();
+
+    public boolean deletar(T obj);
 }

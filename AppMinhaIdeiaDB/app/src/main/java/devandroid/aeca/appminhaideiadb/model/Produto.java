@@ -4,11 +4,19 @@ import android.util.Log;
 
 import devandroid.aeca.appminhaideiadb.controller.ICrud;
 
-public class Produto implements ICrud {
+public class Produto {
 
-    private static final String TAG = "CRUD";
+    private int id;
     private String nome;
     private String fornecedor;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -24,25 +32,5 @@ public class Produto implements ICrud {
 
     public void setFornecedor(String fornecedor) {
         this.fornecedor = fornecedor;
-    }
-
-    @Override
-    public void incluir() {
-        Log.i(TAG, "incluir: Produto");
-    }
-
-    @Override
-    public void alterar() {
-        Log.i(TAG, "alterar: Produto");
-    }
-
-    @Override
-    public void listar() {
-        Log.i(TAG, "listar: Produto");
-    }
-
-    @Override
-    public void deletar() {
-        Log.i(TAG, "deletar: Produto");
     }
 }

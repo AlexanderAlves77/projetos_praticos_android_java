@@ -5,10 +5,19 @@ import android.util.Log;
 import devandroid.aeca.appminhaideiadb.controller.ICrud;
 import devandroid.aeca.appminhaideiadb.core.AppUtil;
 
-public class Cliente implements ICrud {
+public class Cliente {
 
+    private int id;
     private String nome;
     private String email;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -24,25 +33,5 @@ public class Cliente implements ICrud {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    @Override
-    public void incluir() {
-        Log.i(AppUtil.TAG, "incluir: Cliente");
-    }
-
-    @Override
-    public void alterar() {
-        Log.i(AppUtil.TAG, "alterar: Cliente");
-    }
-
-    @Override
-    public void listar() {
-        Log.i(AppUtil.TAG, "listar: Cliente");
-    }
-
-    @Override
-    public void deletar() {
-        Log.i(AppUtil.TAG, "deletar: Cliente");
     }
 }

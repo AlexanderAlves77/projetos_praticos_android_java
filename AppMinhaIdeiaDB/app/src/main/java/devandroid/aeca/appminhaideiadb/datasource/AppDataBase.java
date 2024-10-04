@@ -7,6 +7,7 @@ import android.util.Log;
 
 import devandroid.aeca.appminhaideiadb.core.AppUtil;
 import devandroid.aeca.appminhaideiadb.datamodel.ClienteDataModel;
+import devandroid.aeca.appminhaideiadb.datamodel.ProdutoDataModel;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
@@ -25,7 +26,10 @@ public class AppDataBase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(ClienteDataModel.criarTabela());
-        Log.d(AppUtil.TAG, "onCreate: Tabela Cliente " + ClienteDataModel.criarTabela());
+        Log.d(AppUtil.TAG, "onCreate: Tabela Cliente criada " + ClienteDataModel.criarTabela());
+
+        db.execSQL(ProdutoDataModel.criarTabela());
+        Log.d(AppUtil.TAG, "onCreate: Tabela Produto criada " + ProdutoDataModel.criarTabela());
     }
 
     @Override
