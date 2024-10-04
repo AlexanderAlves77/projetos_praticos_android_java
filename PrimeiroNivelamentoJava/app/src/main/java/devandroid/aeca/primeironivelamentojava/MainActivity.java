@@ -8,7 +8,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import devandroid.aeca.primeironivelamentojava.model.Cliente;
+
 public class MainActivity extends AppCompatActivity {
+
+    Cliente cliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +24,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        cliente = new Cliente("Alexander Alves", "teste@teste.com", "22999998888", 47, true);
+
     }
 }
