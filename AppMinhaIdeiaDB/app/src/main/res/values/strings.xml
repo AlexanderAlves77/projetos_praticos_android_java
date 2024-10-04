@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AppMinhaIdeiaDB</string>
+    <string name="app_title">App Minha Ideia</string>
+    <string name="app_version">Versão 1.0</string>
 </resources>
