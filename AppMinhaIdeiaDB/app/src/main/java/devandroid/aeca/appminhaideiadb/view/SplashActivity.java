@@ -12,9 +12,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.aeca.appminhaideiadb.R;
+import devandroid.aeca.appminhaideiadb.model.Cliente;
 
 public class SplashActivity extends AppCompatActivity {
 
+    Cliente cliente;
     String TAG = "APP_MINHA_IDEIA";
     int waitingTime = 1000 * 5;
 
@@ -32,14 +34,25 @@ public class SplashActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: Tela Splash Carregada...");
 
         changeScreen();
-
     }
 
     private void changeScreen() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                cliente = new Cliente("Alexander Alves",
+                        "teste@teste.com",
+                        "22999998888",
+                        47,
+                        true);
+
                 Intent changeOfScreen = new Intent(SplashActivity.this, MainActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("nome", cliente.getNome());
+                bundle.putString("email", cliente.getEmail());
+
+                changeOfScreen.putExtras(bundle);
+
                 startActivity(changeOfScreen);
                 finish();
             }

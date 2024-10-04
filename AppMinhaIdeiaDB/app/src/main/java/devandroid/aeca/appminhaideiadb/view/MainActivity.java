@@ -2,6 +2,7 @@ package devandroid.aeca.appminhaideiadb.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +15,8 @@ import devandroid.aeca.appminhaideiadb.model.Cliente;
 
 public class MainActivity extends AppCompatActivity {
 
-    Cliente cliente;
     String TAG = "APP_MINHA_IDEIA";
+    TextView txtNome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG, "onCreate: Tela Principal Carregada...");
 
-        cliente = new Cliente("Alexander Alves", "teste@teste.com", "22999998888", 47, true);
+        Bundle bundle = getIntent().getExtras();
+
+        Log.d(TAG, "onCreate: Nome..." + bundle.getString("nome"));
+        Log.d(TAG, "onCreate: Email..." + bundle.getString("email"));
+
+        txtNome = findViewById(R.id.txtNome);
+        txtNome.setText("Bem vindo..." + bundle.getString("nome"));
     }
 }
