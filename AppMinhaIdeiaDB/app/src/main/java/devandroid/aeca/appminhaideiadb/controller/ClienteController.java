@@ -1,16 +1,16 @@
 package devandroid.aeca.appminhaideiadb.controller;
 
+import android.content.Context;
 import android.util.Log;
 
 import devandroid.aeca.appminhaideiadb.core.AppUtil;
+import devandroid.aeca.appminhaideiadb.datasource.AppDataBase;
 
-public class ClienteController {
+public class ClienteController extends AppDataBase {
 
-    String versaoApp;
+    public ClienteController(Context context) {
+        super(context);
 
-    public ClienteController() {
-        this.versaoApp = AppUtil.versaoDoAplicativo();
-
-        Log.i(AppUtil.TAG, "ClienteController: Versão App: " + versaoApp);
+        Log.i(AppUtil.TAG, "ClienteController: Conectado");
     }
 }

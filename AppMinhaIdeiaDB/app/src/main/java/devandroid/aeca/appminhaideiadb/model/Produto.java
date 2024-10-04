@@ -3,12 +3,12 @@ package devandroid.aeca.appminhaideiadb.model;
 import android.util.Log;
 
 import devandroid.aeca.appminhaideiadb.controller.ICrud;
-import devandroid.aeca.appminhaideiadb.core.AppUtil;
 
-public class Cliente implements ICrud {
+public class Produto implements ICrud {
 
+    private static final String TAG = "CRUD";
     private String nome;
-    private String email;
+    private String fornecedor;
 
     public String getNome() {
         return nome;
@@ -18,31 +18,31 @@ public class Cliente implements ICrud {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getFornecedor() {
+        return fornecedor;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setFornecedor(String fornecedor) {
+        this.fornecedor = fornecedor;
     }
 
     @Override
     public void incluir() {
-        Log.i(AppUtil.TAG, "incluir: Cliente");
+        Log.i(TAG, "incluir: Produto");
     }
 
     @Override
     public void alterar() {
-        Log.i(AppUtil.TAG, "alterar: Cliente");
+        Log.i(TAG, "alterar: Produto");
     }
 
     @Override
     public void listar() {
-        Log.i(AppUtil.TAG, "listar: Cliente");
+        Log.i(TAG, "listar: Produto");
     }
 
     @Override
     public void deletar() {
-        Log.i(AppUtil.TAG, "deletar: Cliente");
+        Log.i(TAG, "deletar: Produto");
     }
 }
