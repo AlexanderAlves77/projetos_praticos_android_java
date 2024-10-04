@@ -4,10 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-import devandroid.aeca.appminhaideiadb.datamodel.ClienteDataModel;
 import devandroid.aeca.appminhaideiadb.datamodel.ProdutoDataModel;
 import devandroid.aeca.appminhaideiadb.datasource.AppDataBase;
 import devandroid.aeca.appminhaideiadb.model.Produto;
@@ -48,12 +46,8 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto> {
     }
 
     @Override
-    public boolean deletar(Produto obj) {
-        dadoDoObjeto = new ContentValues();
+    public boolean deletar(int id) {
 
-        dadoDoObjeto.put(ProdutoDataModel.ID, obj.getId());
-        dadoDoObjeto.put(ProdutoDataModel.NOME, obj.getNome());
-        dadoDoObjeto.put(ProdutoDataModel.FORNECEDOR, obj.getFornecedor());
         return false;
     }
 }

@@ -10,5 +10,5 @@ public interface ICrud<T> {
 
     public List<T> listar();
 
-    public boolean deletar(T obj);
+    public boolean deletar(int id);
 }
