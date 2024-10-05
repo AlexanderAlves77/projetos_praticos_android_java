@@ -2,13 +2,18 @@ package devandroid.aeca.appminhaideiadb.datasource;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import devandroid.aeca.appminhaideiadb.core.AppUtil;
 import devandroid.aeca.appminhaideiadb.datamodel.ClienteDataModel;
 import devandroid.aeca.appminhaideiadb.datamodel.ProdutoDataModel;
+import devandroid.aeca.appminhaideiadb.model.Cliente;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
@@ -63,6 +68,29 @@ public class AppDataBase extends SQLiteOpenHelper {
             Log.d(AppUtil.TAG, "insert: " + err.getMessage());
         }
         return retorno;
+    }
+
+    public List<Cliente> getAllClientes(String tabela) {
+        db = getWritableDatabase();
+        List<Cliente> clientes = new ArrayList<>();
+        Cliente obj;
+        String sql = "SELECT * FROM " + tabela;
+
+        Cursor cursor;
+        cursor = db.rawQuery(sql, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                obj = new Cliente();
+                obj.setId(cursor.getInt(cursor.getColumnIndex(ClienteDataModel.ID)));
+                obj.setNome(cursor.getString(cursor.getColumnIndex(ClienteDataModel.NOME)));
+                obj.setNome(cursor.getString(cursor.getColumnIndex(ClienteDataModel.EMAIL)));
+
+                clientes.add(obj);
+            }
+            while (cursor.moveToNext());
+        }
+        return clientes;
     }
 
     public boolean deleteById(String tabela, int id) {

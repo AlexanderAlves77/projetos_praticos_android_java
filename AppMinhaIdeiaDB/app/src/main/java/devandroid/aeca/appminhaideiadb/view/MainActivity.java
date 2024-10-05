@@ -34,22 +34,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         clienteController = new ClienteController(getApplicationContext());
-        cliente = new Cliente();
 
-        cliente.setNome("Alexander");
-        cliente.setEmail("aeca@teste.com.br");
 
-        if(clienteController.incluir(cliente)) {
-            Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() +
-                    " incluído com sucesso...", Toast.LENGTH_SHORT).show();
-
-            Log.i(AppUtil.TAG, "Cliente: "+ cliente.getNome() +" incluído com sucesso...");
-        }
-        else {
-            Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() +
-                    " não incluído com sucesso...", Toast.LENGTH_SHORT).show();
-
-            Log.e(AppUtil.TAG, "Cliente: "+ cliente.getNome() +" não incluído com sucesso...");
+        for (int i = 0; i < 49; i++) {
+            cliente = new Cliente();
+            cliente.setNome("Alexander Alves " + i);
+            cliente.setEmail(i+"_aeca@teste.com.br");
+            clienteController.incluir(cliente);
         }
     }
 }
