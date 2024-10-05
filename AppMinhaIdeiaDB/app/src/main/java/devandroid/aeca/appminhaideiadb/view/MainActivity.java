@@ -42,5 +42,9 @@ public class MainActivity extends AppCompatActivity {
             cliente.setEmail(i+"_aeca@teste.com.br");
             clienteController.incluir(cliente);
         }
+
+        for (Cliente obj : clienteController.listar()) {
+            Log.e("Cliente", "onCreate: " + obj.getId()+" "+ obj.getNome()+" "+ obj.getEmail());
+        }
     }
 }
