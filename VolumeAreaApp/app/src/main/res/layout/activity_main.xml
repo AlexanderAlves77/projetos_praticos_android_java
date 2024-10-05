@@ -5,16 +5,32 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volume Calculator"
+        android:gravity="center"
+        android:textSize="44sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_editor_absoluteY="134dp"
+        />
 
     <GridView
         android:id="@+id/gridView"
+        android:numColumns="2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
