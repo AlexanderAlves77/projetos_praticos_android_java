@@ -7,9 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textTitle;
     EditText editTextName;
     Button btnConfirm;
+    SwitchCompat switchShow;
+    ToggleButton toggleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         textTitle = findViewById(R.id.textTitle);
         editTextName = findViewById(R.id.editTextName);
         btnConfirm = findViewById(R.id.btnConfirm);
+        toggleButton = findViewById(R.id.toggleButton);
+        switchShow = findViewById(R.id.switchShow);
 
         textTitle.setText("Retrato Principal");
 
@@ -49,6 +55,31 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(getBaseContext(), "Você digitou: " + editTextName.getText(),
                             Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(switchShow.isChecked())
+                    editTextName.setEnabled(false);
+                else
+                    editTextName.setEnabled(true);
+            }
+        });
+
+        switchShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String newTitle = textTitle.getText().toString().toUpperCase();
+
+                if(switchShow.isChecked()) {
+                    textTitle.setVisibility(View.GONE);
+                }
+                else {
+                    textTitle.setVisibility(View.VISIBLE);
+                    textTitle.setText(newTitle);
                 }
             }
         });
