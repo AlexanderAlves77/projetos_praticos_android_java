@@ -5,8 +5,14 @@
     <string name="nav_header_title">Cliente</string>
     <string name="nav_header_subtitle">Alexander Alves</string>
     <string name="nav_header_desc">Navigation header</string>
+
+    <string name="modelo_fragment">App Cliente Vip</string>
+
+    <!-- Opções do Menu Principal -->
     <string name="action_settings">Sair</string>
-    <string name="modelo_fragment">Fragmento Modelo</string>
+    <string name="action_meuperfil">Meu Perfil</string>
+
+    <!-- Opções do Menu Laterial Drawer -->
     <string name="fragment_preto">Fragmento Preto</string>
     <string name="fragment_vermelho">Fragmento Vermelho</string>
     <string name="fragment_azul">Fragmento Azul</string>

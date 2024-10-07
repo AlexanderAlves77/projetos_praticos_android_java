@@ -24,11 +24,14 @@ import devandroid.aeca.appmodelodrawable.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    // Gerenciamento dos fragmentos
     FragmentManager fragmentManager;
-
+    // Gerenciamento do menu drawer
     NavigationView navigationView;
-
+    
+    // Gerencimento do menu action bar
     Menu menu;
+    // Gerenciamento de cada item do menu drawer
     MenuItem nav_preto;
     MenuItem nav_vermelho;
     MenuItem nav_azul;

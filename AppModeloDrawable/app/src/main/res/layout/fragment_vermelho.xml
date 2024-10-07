@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8F1108"
+    android:background="@color/colorRed"
     tools:context=".ModeloVermelhoFragment">
 
 
@@ -17,6 +17,6 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        android:text="@string/fragment_vermelho" />
+        android:text="@string/modelo_fragment" />
 
 </FrameLayout>
