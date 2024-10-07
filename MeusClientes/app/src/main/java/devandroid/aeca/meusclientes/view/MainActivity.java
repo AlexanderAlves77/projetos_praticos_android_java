@@ -1,4 +1,4 @@
-package devandroid.aeca.meusclientes;
+package devandroid.aeca.meusclientes.view;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -17,6 +17,8 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import devandroid.aeca.meusclientes.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
