@@ -1,4 +1,4 @@
-package app.modelo.meusclientes;
+package devandroid.aeca.appmodelodrawable;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
