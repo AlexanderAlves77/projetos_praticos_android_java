@@ -39,6 +39,7 @@ public class MyCustomAdapter extends ArrayAdapter<Shape> {
         if (convertView == null) {
             myViewHolder = new MyViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
+
             convertView = inflater.inflate(
                     R.layout.grid_item_layout,
                     parent,

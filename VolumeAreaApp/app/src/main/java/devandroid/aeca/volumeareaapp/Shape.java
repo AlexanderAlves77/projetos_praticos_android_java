@@ -10,9 +10,7 @@ public class Shape {
         this.shapeName = shapeName;
     }
 
-    public int getShapeImg() {
-        return shapeImg;
-    }
+    public int getShapeImg() { return shapeImg; }
 
     public void setShapeImg(int shapeImg) {
         this.shapeImg = shapeImg;
