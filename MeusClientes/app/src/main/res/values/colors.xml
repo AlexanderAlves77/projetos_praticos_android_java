@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#859F67</color>
+    <color name="colorAccent">#FFC107</color>
+
+    <!-- Cores do Backgrounds das Telas -->
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlue">#07487C</color>
+    <color name="colorRed">#8F1108</color>
+</resources>

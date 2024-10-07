@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "devandroid.aeca.appminhaideiadb"
+    namespace = "devandroid.aeca.meusclientes"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "devandroid.aeca.appminhaideiadb"
+        applicationId = "devandroid.aeca.meusclientes"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
