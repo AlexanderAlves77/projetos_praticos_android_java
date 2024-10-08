@@ -24,7 +24,6 @@ public class AppDataBase extends SQLiteOpenHelper {
     public AppDataBase(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         Log.d(AppUtil.TAG, "AppDataBase: Criando Banco de Dados");
-
         db = getWritableDatabase();
     }
 

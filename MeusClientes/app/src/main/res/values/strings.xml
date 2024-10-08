@@ -13,6 +13,7 @@
     <string name="action_meuperfil">Meu Perfil</string>
 
     <!-- Opções do Menu Laterial Drawer -->
+    <string name="fragment_add_cliente">Adicionar Cliente</string>
     <string name="fragment_preto">Fragmento Preto</string>
     <string name="fragment_vermelho">Fragmento Vermelho</string>
     <string name="fragment_azul">Fragmento Azul</string>
