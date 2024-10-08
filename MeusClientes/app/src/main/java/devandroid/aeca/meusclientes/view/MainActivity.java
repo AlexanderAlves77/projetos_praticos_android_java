@@ -19,6 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 import devandroid.aeca.meusclientes.R;
+import devandroid.aeca.meusclientes.controller.ClienteController;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity
         fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
 
+        ClienteController clienteController = new ClienteController(getBaseContext());
     }
 
     @Override

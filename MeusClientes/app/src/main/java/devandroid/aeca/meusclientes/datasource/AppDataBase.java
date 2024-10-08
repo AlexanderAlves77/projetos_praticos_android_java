@@ -12,12 +12,11 @@ import java.util.List;
 
 import devandroid.aeca.meusclientes.api.AppUtil;
 import devandroid.aeca.meusclientes.datamodel.ClienteDataModel;
-import devandroid.aeca.meusclientes.datamodel.ProdutoDataModel;
 import devandroid.aeca.meusclientes.model.Cliente;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
-    public static final String  DB_NAME =  "AppMinhaIdeia.sqlite";
+    public static final String  DB_NAME =  "MeusClientes.sqlite";
     public static final int DB_VERSION =  1;
 
     SQLiteDatabase db;
@@ -33,9 +32,6 @@ public class AppDataBase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(ClienteDataModel.criarTabela());
         Log.d(AppUtil.TAG, "onCreate: Tabela Cliente criada " + ClienteDataModel.criarTabela());
-
-        db.execSQL(ProdutoDataModel.criarTabela());
-        Log.d(AppUtil.TAG, "onCreate: Tabela Produto criada " + ProdutoDataModel.criarTabela());
     }
 
     @Override
