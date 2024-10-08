@@ -32,11 +32,11 @@ public class AdicionarClienteFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         view =  inflater.inflate(R.layout.fragment_azul, container, false);
-
+    /*
         TextView txtTitulo = view.findViewById(R.id.txtTitulo);
 
         txtTitulo.setTextColor(ColorStateList.valueOf(Color.WHITE));
-
+    */
         return view;
     }
 
