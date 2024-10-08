@@ -7,6 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="modelo_fragment">App Cliente Vip</string>
+    <string name="listar_clientes_fragment">Lista de Clientes</string>
 
     <!-- Opções do Menu Principal -->
     <string name="action_settings">Sair</string>
@@ -14,6 +15,8 @@
 
     <!-- Opções do Menu Laterial Drawer -->
     <string name="fragment_add_cliente">Adicionar Cliente</string>
+    <string name="fragment_listar_clientes">Listar Clientes</string>
+
     <string name="fragment_preto">Fragmento Preto</string>
     <string name="fragment_vermelho">Fragmento Vermelho</string>
     <string name="fragment_azul">Fragmento Azul</string>
@@ -21,3 +24,4 @@
     <!-- Textos para o Layout Adicionar Novo Cliente -->
     <string name="novoCliente">Adicionar Novo Cliente</string>
 </resources>
+
