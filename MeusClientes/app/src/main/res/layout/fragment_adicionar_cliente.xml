@@ -43,7 +43,9 @@
             android:hint="Telefone"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="phone"
+            />
 
         <EditText
             android:id="@+id/editEmail"
@@ -55,7 +57,9 @@
             android:hint="Email"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="textEmailAddress"
+            />
 
         <EditText
             android:id="@+id/editCep"
@@ -67,7 +71,9 @@
             android:hint="Cep"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="number"
+            />
 
         <EditText
             android:id="@+id/editLogradouro"
@@ -91,7 +97,9 @@
             android:hint="Número"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="number"
+            />
 
         <EditText
             android:id="@+id/editBairro"
