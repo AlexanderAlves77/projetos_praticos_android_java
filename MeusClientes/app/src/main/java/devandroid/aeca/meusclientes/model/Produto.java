@@ -1,4 +1,4 @@
-package devandroid.aeca.appminhaideiadb.model;
+package devandroid.aeca.meusclientes.model;
 
 import android.util.Log;
 

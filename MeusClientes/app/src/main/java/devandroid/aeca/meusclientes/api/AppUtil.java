@@ -1,4 +1,4 @@
-package devandroid.aeca.appminhaideiadb.core;
+package devandroid.aeca.meusclientes.api;
 
 public class AppUtil {
 

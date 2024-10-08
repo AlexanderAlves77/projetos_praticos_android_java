@@ -1,4 +1,4 @@
-package devandroid.aeca.appminhaideiadb.controller;
+package devandroid.aeca.meusclientes.controller;
 
 import java.util.List;
 

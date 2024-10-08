@@ -1,4 +1,4 @@
-package devandroid.aeca.appminhaideiadb.datamodel;
+package devandroid.aeca.meusclientes.datamodel;
 
 public class ClienteDataModel {
 

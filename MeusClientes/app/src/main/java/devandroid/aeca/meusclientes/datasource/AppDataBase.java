@@ -1,4 +1,4 @@
-package devandroid.aeca.appminhaideiadb.datasource;
+package devandroid.aeca.meusclientes.datasource;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,10 +10,10 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import devandroid.aeca.appminhaideiadb.core.AppUtil;
-import devandroid.aeca.appminhaideiadb.datamodel.ClienteDataModel;
-import devandroid.aeca.appminhaideiadb.datamodel.ProdutoDataModel;
-import devandroid.aeca.appminhaideiadb.model.Cliente;
+import devandroid.aeca.meusclientes.api.AppUtil;
+import devandroid.aeca.meusclientes.datamodel.ClienteDataModel;
+import devandroid.aeca.meusclientes.datamodel.ProdutoDataModel;
+import devandroid.aeca.meusclientes.model.Cliente;
 
 public class AppDataBase extends SQLiteOpenHelper {
 

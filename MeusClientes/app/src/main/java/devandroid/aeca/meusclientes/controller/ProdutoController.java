@@ -1,4 +1,4 @@
-package devandroid.aeca.appminhaideiadb.controller;
+package devandroid.aeca.meusclientes.controller;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,10 +6,10 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import devandroid.aeca.appminhaideiadb.datamodel.ClienteDataModel;
-import devandroid.aeca.appminhaideiadb.datamodel.ProdutoDataModel;
-import devandroid.aeca.appminhaideiadb.datasource.AppDataBase;
-import devandroid.aeca.appminhaideiadb.model.Produto;
+import devandroid.aeca.meusclientes.datamodel.ClienteDataModel;
+import devandroid.aeca.meusclientes.datamodel.ProdutoDataModel;
+import devandroid.aeca.meusclientes.datasource.AppDataBase;
+import devandroid.aeca.meusclientes.model.Produto;
 
 public class ProdutoController extends AppDataBase implements ICrud<Produto> {
 
