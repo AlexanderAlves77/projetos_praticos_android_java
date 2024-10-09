@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import devandroid.aeca.meusclientes.api.AppUtil;
@@ -58,5 +59,15 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
     @Override
     public boolean deletar(int id) {
         return deleteById(ClienteDataModel.TABELA, id);
+    }
+
+    public List<String> gerarListaDeClientesListView() {
+        List<String> clientes = new ArrayList<>();
+
+        for (Cliente obj : listar()) {
+            clientes.add(obj.getId()+", "+obj.getNome());
+        }
+
+        return clientes;
     }
 }

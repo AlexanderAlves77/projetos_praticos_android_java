@@ -3,6 +3,8 @@ package devandroid.aeca.meusclientes.view;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +62,7 @@ public class ListarClientesFragment extends Fragment {
 
         clienteController = new ClienteController(getContext());
         clientesList = clienteController.listar();
-        clientes = new ArrayList<>();
+        // clientes = new ArrayList<>();
 
         listView = (ListView) view.findViewById(R.id.listView);
         editPesquisar = view.findViewById(R.id.editPesquisar);
@@ -75,6 +77,23 @@ public class ListarClientesFragment extends Fragment {
                 R.layout.listar_cliente_item, R.id.txtItemLista, clientes);
 
         listView.setAdapter(clienteAdapter);
+
+        editPesquisar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence filtro, int start, int count, int after) {
+                ListarClientesFragment.this.clienteAdapter.getFilter().filter(filtro);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         return view;
     }
