@@ -18,7 +18,6 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
 
     public ClienteController(Context context) {
         super(context);
-
         Log.i(AppUtil.TAG, "ClienteController: Conectado");
     }
 

@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -63,9 +64,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
-
-        ClienteController clienteController = new ClienteController(getBaseContext());
+        fragmentManager.beginTransaction().replace(R.id.content_fragment,
+                new ListarClientesFragment()).commit();
     }
 
     @Override
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto Selecionado");
+            nav_preto.setTitle("Preto Ativo");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
             nav_vermelho.setTitle("Vermelho");
@@ -121,11 +121,13 @@ public class MainActivity extends AppCompatActivity
 
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment,
+                    new ModeloPretoFragment()).commit();
 
         }
         else if (id == R.id.nav_listar_cliente) {
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment,
+                    new ListarClientesFragment()).commit();
         }
         else if (id == R.id.nav_vermelho) {
 
@@ -136,7 +138,7 @@ public class MainActivity extends AppCompatActivity
             nav_preto.setTitle("Preto");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho Selecionado");
+            nav_vermelho.setTitle("Vermelho Ativo");
 
             nav_azul = menu.findItem(R.id.nav_azul);
             nav_azul.setTitle("Azul");
@@ -144,7 +146,8 @@ public class MainActivity extends AppCompatActivity
             // TODO: Mudar a cor de todos os itens do menu programaticamente
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment,
+                    new ModeloVermelhoFragment()).commit();
 
         } else if (id == R.id.nav_azul) {
 
@@ -157,11 +160,12 @@ public class MainActivity extends AppCompatActivity
             nav_vermelho.setTitle("Vermelho");
 
             nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul Selecionado");
+            nav_azul.setTitle("Azul Ativo");
 
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment,
+                    new ModeloAzulFragment()).commit();
 
         }
         else if (id == R.id.nav_adicionar_cliente) {

@@ -36,9 +36,9 @@ public class ClienteDataModel {
         queryCriarTabela += CEP + " integer, ";
         queryCriarTabela += LOGRADOURO + " text, ";
         queryCriarTabela += NUMERO + " text, ";
-        queryCriarTabela += BAIRRO + " text ";
-        queryCriarTabela += CIDADE + " text ";
-        queryCriarTabela += ESTADO + " text ";
+        queryCriarTabela += BAIRRO + " text, ";
+        queryCriarTabela += CIDADE + " text, ";
+        queryCriarTabela += ESTADO + " text, ";
         queryCriarTabela += TERMOS_DE_USO + " integer ";
         queryCriarTabela += ")";
 
