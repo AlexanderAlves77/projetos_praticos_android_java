@@ -9,6 +9,7 @@ The primary objective of this repository is to demonstrate engineering competenc
 
 ## Repository Structure
 
+```text
 projetos_praticos_android_java/
 │
 ├── AppAulaSp/                  # Activity lifecycle and navigation fundamentals
@@ -26,8 +27,9 @@ projetos_praticos_android_java/
 ├── app/                        # Base Android project template
 │
 ├── gradle/                     # Gradle build system configuration
-├── build.gradle.kts           # Project build configuration
-└── settings.gradle.kts        # Project module settings
+├── build.gradle.kts            # Project build configuration
+└── settings.gradle.kts         # Project module settings
+```
 
 ---
 
