@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.fulldevstacks.webservices.entities.User;
 import com.fulldevstacks.webservices.repositories.UserRepository;
+import com.fulldevstacks.webservices.services.exceptions.DatabaseException;
 import com.fulldevstacks.webservices.services.exceptions.ResourceNotFoundException;
 
 
@@ -42,7 +44,15 @@ public class UserService
 	
 	public void Delete(Long id) 
 	{
-		repository.deleteById(id);
+		try {
+			repository.deleteById(id);
+		}
+		catch (EmptyResultDataAccessException ex) {
+			throw new ResourceNotFoundException(id);
+		}
+		catch (RuntimeException e) {
+			throw new DatabaseException(e.getMessage());
+		}
 	}
 	
 	public User Update(Long id, User user) 
