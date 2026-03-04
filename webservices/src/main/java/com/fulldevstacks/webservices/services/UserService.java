@@ -16,6 +16,13 @@ public class UserService
 	@Autowired
 	private UserRepository repository;
 	
+	private void updateData(User entity, User user) 
+	{
+		entity.setName(user.getName());
+		entity.setEmail(user.getEmail());
+		entity.setPhone(user.getPhone());
+	}
+	
 	public List<User> FindAll() 
 	{
 		return repository.findAll();		
@@ -35,6 +42,13 @@ public class UserService
 	public void Delete(Long id) 
 	{
 		repository.deleteById(id);
+	}
+	
+	public User Update(Long id, User user) 
+	{
+		User entity = repository.getReferenceById(id);
+		updateData(entity, user);
+		return repository.save(entity);
 	}
 }
  
