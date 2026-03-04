@@ -12,6 +12,8 @@ import com.fulldevstacks.webservices.repositories.UserRepository;
 import com.fulldevstacks.webservices.services.exceptions.DatabaseException;
 import com.fulldevstacks.webservices.services.exceptions.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 
 @Service
 public class UserService 
@@ -56,10 +58,16 @@ public class UserService
 	}
 	
 	public User Update(Long id, User user) 
-	{
-		User entity = repository.getReferenceById(id);
-		updateData(entity, user);
-		return repository.save(entity);
+	{		
+		try 
+		{
+			User entity = repository.getReferenceById(id);
+			updateData(entity, user);
+			return repository.save(entity);
+		}
+		catch (EntityNotFoundException ex) {
+			throw new ResourceNotFoundException(id);
+		}
 	}
 }
  
