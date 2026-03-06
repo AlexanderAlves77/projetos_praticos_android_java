@@ -1,0 +1,114 @@
+# =========================
+
+# IDE
+
+# =========================
+
+# IntelliJ
+
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+
+.vscode/
+
+# Eclipse
+
+.project
+.classpath
+.settings/
+
+# =========================
+
+# Build
+
+# =========================
+
+target/
+build/
+out/
+
+# Maven wrapper
+
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+
+.gradle/
+
+# =========================
+
+# Logs
+
+# =========================
+
+*.log
+logs/
+
+# =========================
+
+# OS files
+
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+
+# Environment files
+
+# =========================
+
+.env
+.env.*
+*.env
+
+# =========================
+
+# Docker
+
+# =========================
+
+docker-data/
+
+# =========================
+
+# Kubernetes
+
+# =========================
+
+*.kubeconfig
+
+# =========================
+
+# Temporary files
+
+# =========================
+
+*.tmp
+*.swp
+*.swo
+*~
+
+# =========================
+
+# Test outputs
+
+# =========================
+
+test-output/
+coverage/
+
+# =========================
+
+# Local configuration
+
+# =========================
+
+local.properties
+
