@@ -15,7 +15,7 @@ public class GreetingController
 	private final AtomicLong counter = new AtomicLong();
 	private static final String template = "Hello, %s!";
 		
-	// http://localhost:8080/greeting?name=Alexander
+	// http://localhost:8081/greeting?name=Alexander
 	@RequestMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) 
 	{
