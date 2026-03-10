@@ -13,6 +13,10 @@ spring:
       hibernate:
     show-sql: false
     open-in-view: false
+  loggin:
+   level:
+     root: WARN
+     # br.com.fulldevstacks: DEBUG
 
 server:
   port: 8081
