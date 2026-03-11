@@ -12,6 +12,8 @@ The primary objective of this repository is to demonstrate engineering competenc
 ```text
 projetos_praticos_android_java/
 │
+├── ANDROID APPLICATIONS
+│
 ├── AppAulaSp/                  # Activity lifecycle and navigation fundamentals
 ├── AppGasEta/                  # Fuel cost calculator (Gasoline vs Ethanol)
 ├── AppListaCurso/              # ListView implementation and data presentation
@@ -26,6 +28,28 @@ projetos_praticos_android_java/
 ├── VolumeAreaApp/              # Mathematical calculator (Area and Volume)
 ├── app/                        # Base Android project template
 │
+├── BACKEND AND SPRING BOOT PROJECTS
+│
+├── rest_spring_boot_java/        # REST API development using Spring Boot
+├── webservices/                  # Web services architecture with Java
+├── greeting-service/             # Microservice exposing REST endpoints
+│
+├── MICROSERVICES ARCHITECTURE
+│
+├── api-gateway/                  # API Gateway for routing and service aggregation
+├── book-service/                 # Domain microservice responsible for book data
+├── exchange-service/             # Currency or data exchange microservice
+├── smart-order-microservices/    # Distributed order processing system
+│
+├── SERVICE DISCOVERY AND CONFIGURATION
+│
+├── naming-server/                # Service discovery (Eureka Server)
+├── fulldevstacks_config_server/  # Centralized configuration server
+├── spring-cloud-config-server/   # Spring Cloud Config implementation
+│
+├── DESKTOP APPLICATIONS
+│
+├── workshop-javafx-jdbc/         # Desktop application using JavaFX and JDBC
 ├── gradle/                     # Gradle build system configuration
 ├── build.gradle.kts            # Project build configuration
 └── settings.gradle.kts         # Project module settings
@@ -33,167 +57,65 @@ projetos_praticos_android_java/
 
 ---
 
-## Projects Overview
+## Backend and Microservices Engineering
 
-### AppSoma
+Several projects in this repository focus on modern backend and distributed system architecture using Spring Boot and Spring Cloud.
 
-Fundamental application demonstrating event-driven programming and user input handling.
+These projects simulate real enterprise backend systems, including:
 
-Key Concepts:
-- Button click listeners
-- EditText input handling
-- Arithmetic operations
-- TextView dynamic updates
+### API Development
 
-Engineering Focus: Event-driven architecture and UI interaction.
+- REST API design
+- Service-layer architecture
+- HTTP request handling
+- Controller-Service-Repository patterns
 
----
+### Microservices Architecture
 
-### AppGasEta
+- Service decomposition
+- Inter-service communication
+- Distributed configuration
+- API gateway routing
+- Service discovery
 
-Decision-support application that determines whether gasoline or ethanol is more cost-effective based on price ratio.
+### Infrastructure Components
 
-Key Concepts:
-- Conditional logic
-- User input validation
-- Real-world problem modeling
-- Mobile decision-support systems
+- API Gateway
+- Config Server
+- Naming Server (Service Registry)
+- Distributed service architecture
 
-Engineering Focus: Applied logic and real-world business rule implementation.
-
----
-
-### AppListaCurso
-Application demonstrating structured data presentation using ListView.
-
-Key Concepts:
-- ListView implementation
-- Adapters
-- Data modeling and presentation
-- UI component reuse
-
-Engineering Focus: Structured data visualization.
+These components represent the fundamental building blocks of enterprise cloud-native systems.
 
 ---
 
-### AppMinhaIdeiaDB
+## Desktop Application Engineering
 
-Application integrating SQLite database for persistent data storage.
+The project:
+workshop-javafx-jdbc
 
-Key Concepts:
-- SQLite database integration
-- CRUD operations
-- Data persistence layer
-- Android database lifecycle
+demonstrates desktop application development using:
 
-Engineering Focus: Mobile database architecture and persistence layer design.
+* JavaFX for graphical user interface
+* JDBC for database connectivity
+* Structured application architecture
+* Desktop software engineering principles
 
----
-
-### MeusClientes
-
-A complete client management system implementing full CRUD operations.
-
-Key Concepts:
-- SQLite database
-- Object-oriented data modeling
-- Create, Read, Update, Delete operations
-- Structured application architecture
-
-Engineering Focus: Enterprise-level mobile CRUD system design.
+This project highlights the ability to build full Java desktop systems integrated with relational databases.
 
 ---
 
-### VolumeAreaApp
+## Android Development
 
-Mathematical calculator for geometric computations.
+The Android projects demonstrate native mobile application development using Java and the Android SDK, covering areas such as:
 
-Key Concepts:
-- Mathematical computation
-- User input validation
-- Functional decomposition
-- Reusable logic components
+* Activity lifecycle management
+* UI layout systems
+* Event-driven programming
+* Local database integration
+* Mobile application architecture
 
-Engineering Focus: Computational logic engineering.
-
----
-
-### MeuWebSite
-
-Application demonstrating integration between native Android and web technologies.
-
-Key Concepts:
-- WebView integration
-- Hybrid mobile architecture
-- Web content rendering
-
-Engineering Focus: Hybrid application integration.
-
----
-
-### AppModeloDrawable
-
-Demonstrates use of graphical resources and drawable components.
-
-Key Concepts:
-- Drawable resources
-- UI styling
-- Visual design integration
-
-Engineering Focus: UI resource management.
-
----
-
-### FerramentaLayout
-
-Application focused on mastering Android layout systems.
-
-Key Concepts:
-- ConstraintLayout
--  LinearLayout
-- Responsive UI design
-- View hierarchy management
-
-Engineering Focus: Professional Android UI engineering.
-
----
-
-### AulaNivelamentoInterface
-
-Interface development fundamentals.
-
-Key Concepts:
-- UI components
-- Layout structuring
-- Android view system
-
-Engineering Focus: Interface engineering principles.
-
----
-
-### PrimeiroNivelamentoJava
-
-Foundation project integrating Java programming concepts into Android development.
-
-Key Concepts:
-- Object-Oriented Programming
-- Java syntax and structure
-- Android-Java integration
-
-Engineering Focus: Language-to-platform integration.
-
----
-
-### AppAulaSp
-
-Application demonstrating Android activity lifecycle and navigation concepts.
-
-Key Concepts:
-- Activity lifecycle
-- Activity transitions
-- Intent-based navigation
-
-Engineering Focus: Mobile application lifecycle management.
+These projects provide a foundation in mobile software engineering within the Java ecosystem.
 
 ---
 
@@ -203,6 +125,21 @@ Engineering Focus: Mobile application lifecycle management.
 
 - Java (Primary)
 - Kotlin (Minor exposure)
+
+### Backend Development
+
+- Spring Boot
+- REST API development
+- Microservices architecture
+- Service-oriented architecture (SOA)
+
+### Cloud and Microservices Infrastructure
+
+- Spring Cloud
+- API Gateway
+- Service Discovery (Eureka)
+- Config Server
+- Distributed system architecture
 
 ### Mobile Development
 
@@ -224,43 +161,58 @@ Engineering Focus: Mobile application lifecycle management.
 - RelativeLayout
 - Material Design principles
 
-### Data Persistence
+### Mobile Development
 
-- SQLite database
-- Local data storage
-- CRUD architecture
+- Android SDK
+- Native Android development
+- Android Studio
+
+### Desktop Development
+
+- JavaFX
+- JDBC
+- Desktop UI engineering
+
+### Database
+
+- MySQL
+- SQL Server
+- MongoDB
+- SQLite 
+- Relational database integration
+- JDBC connectivity
 
 ### Software Engineering Tools
 
-- Gradle build system
-- Git version control
-- GitHub repository management
-
+- Object-Oriented Programming (OOP)
+- Modular architecture
+- Separation of concerns
+- Layered application design
+- Distributed systems architecture
 
 ---
 
 ## Engineering Competencies Demonstrated
 
 This repository demonstrates competency in:
-- Native Android application development
-- Mobile software architecture
-- Database integration in mobile systems
+- Backend API development
+- Microservices system design
+- Distributed service architecture
+- Android mobile development
+- Desktop software engineering
+- Database integration
 - Event-driven system design
-- UI engineering and layout management
-- Software modularization
-- Applied object-oriented engineering
-- Real-world problem-solving through mobile applications
+- Modular Java application development
 
 ---
 
 ## Academic and Professional Objectives
 
 This repository serves as:
-- A structured portfolio demonstrating Android engineering proficiency
-- A practical laboratory for applied mobile software engineering
-- A foundation for advanced Android architecture (MVVM, Clean Architecture)
-- A preparation platform for enterprise mobile development
-- A reference base for scalable Android system design
+- A structured Java software engineering portfolio
+- A practical laboratory for backend and microservices architecture
+- A foundation for enterprise Java system development
+- A preparation platform for cloud-native backend engineering
 
 ---
 
@@ -286,12 +238,17 @@ The repository evolves progressively with new projects, architectural improvemen
 ---
 
 ## Author
-
+```
 Alexander Alves
 Computer Science Student
-Android Engineer (in development)
-Software Engineering and Mobile Systems Specialist (in formation)
 
+Java Backend Developer
+QA Automation
+Microservices Enthusiast
+Android Developer
+
+Focused on Software Engineering, Distributed Systems, and Enterprise Application Development
+```
 
 
 ---
