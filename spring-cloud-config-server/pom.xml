@@ -19,6 +19,7 @@
 		<spring-cloud.version>2025.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -40,6 +41,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

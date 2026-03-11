@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: spring-cloud-config-server
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+      endpoint:
+        health:
+          show-details: ALWAYS
+    greeting-service:
+      greeting: "Hola"
+      default-value: "Mundo"
+  
