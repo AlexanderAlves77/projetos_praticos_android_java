@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import br.com.fulldevstacks.dto.Exchange;
 
-import java.math.BigDecimal;
 
-
+@FeignClient(name = "exchange-service", url = "localhost:8000")
 public interface ExchangeProxy 
 {
-
+	@GetMapping(value = "/exchange-service/{amount}/{from}/{to}")
+    public Exchange getExchange(
+            @PathVariable("amount") Double amount,
+            @PathVariable("from") String from,
+            @PathVariable("to") String to);
 }
