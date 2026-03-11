@@ -38,8 +38,9 @@ public class Book implements Serializable
     
     public Book() {}
 
-	public Book(Long id, String author, String title, Date launchDate, Double price, String currency,
-			String environment) {
+	public Book(Long id, String author, String title, Date launchDate, Double price, 
+			String currency, String environment) 
+	{
 		super();
 		this.id = id;
 		this.author = author;

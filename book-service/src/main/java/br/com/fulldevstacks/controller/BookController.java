@@ -1,6 +1,8 @@
 package br.com.fulldevstacks.controller;
 
 import java.util.Date;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fulldevstacks.environment.InstanceInformationService;
 import br.com.fulldevstacks.model.Book;
+import br.com.fulldevstacks.repository.BookRepository;
 
 @RestController 
 @RequestMapping("book-service")
@@ -18,6 +21,37 @@ public class BookController
 	@Autowired 
 	private InstanceInformationService informationService;
 	
+	@Autowired 
+	private BookRepository repository;
+	
+	// http://localhost:8100/book-service/1/BRL
+	@GetMapping(value = "/{id}/{currency}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency)
+	{
+		String port = informationService.retrieveServerPort();		
+		Book book = repository.findById(id).orElseThrow();
+		
+		
+		
+		book.setEnvironment(port);
+		book.setCurrency(currency);		
+		return book;
+	}
+		
+	
+	/*
+	 * // http://localhost:8100/book-service/1/BRL
+	@GetMapping(value = "/{id}/{currency}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency)
+	{
+		String port = informationService.retrieveServerPort();
+			
+		Book book = repository.findById(id).orElseThrow();
+		book.setEnvironment(port);
+		book.setCurrency(currency);		
+		return book;
+	}
+		
 	// http://localhost:8100/book-service/1/BRL
 	@GetMapping(value = "/{id}/{currency}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency)
@@ -27,5 +61,5 @@ public class BookController
 		return new Book(1L, "Nigel Poulton", "Docker Deep Dive",
 			new Date(), 15.8, "BRL", port);
 	}
-
+	 */
 }
