@@ -34,6 +34,22 @@ public class BookController
 	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency)
 	{
 		String port = informationService.retrieveServerPort();		
+		Book book = repository.findById(id).orElseThrow();				
+		Exchange exchange = proxy.getExchange(book.getPrice(), "USD", currency);
+		
+		book.setEnvironment(port + " FEIGN");
+		book.setPrice(exchange.getConvertedValue());
+		book.setCurrency(currency);		
+		return book;
+	}
+		
+	
+	/*
+	 // http://localhost:8100/book-service/1/BRL
+	@GetMapping(value = "/{id}/{currency}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency)
+	{
+		String port = informationService.retrieveServerPort();		
 		Book book = repository.findById(id).orElseThrow();
 		
 		HashMap<String, String> params = new HashMap<>();
@@ -48,10 +64,8 @@ public class BookController
 		book.setCurrency(currency);		
 		return book;
 	}
-		
 	
-	/*
-	 * // http://localhost:8100/book-service/1/BRL
+	// http://localhost:8100/book-service/1/BRL
 	@GetMapping(value = "/{id}/{currency}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency)
 	{
