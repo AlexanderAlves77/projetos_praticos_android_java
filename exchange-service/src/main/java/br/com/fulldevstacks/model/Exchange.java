@@ -37,9 +37,8 @@ public class Exchange implements Serializable
 	
 	public Exchange() {}
 	
-	public Exchange(Long id, String from, String to, BigDecimal conversionFactor, BigDecimal convertedValue,
-			String environment) {
-		super();
+	public Exchange(Long id, String from, String to, BigDecimal conversionFactor, 
+			BigDecimal convertedValue, String environment) {
 		this.id = id;
 		this.from = from;
 		this.to = to;
