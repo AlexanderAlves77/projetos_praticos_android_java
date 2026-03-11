@@ -24,7 +24,7 @@ public class GreetingController {
             String name)
     {
         if (name.isEmpty()) name = configuration.getDefaultValue();
-        return  new Greeting(counter.incrementAndGet(), String.format(template,
+        return new Greeting(counter.incrementAndGet(), String.format(template,
                 configuration.getGreeting(),
                 name));
     }
