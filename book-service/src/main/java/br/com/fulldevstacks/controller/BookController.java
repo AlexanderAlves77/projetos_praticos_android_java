@@ -15,7 +15,6 @@ import br.com.fulldevstacks.model.Book;
 @RequestMapping("book-service")
 public class BookController 
 {
-	
 	@Autowired 
 	private InstanceInformationService informationService;
 	
