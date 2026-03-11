@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/alexanderalves77/
+          uri: https://github.com/AlexanderAlves77/projetos_praticos_android_java/fulldevstacks_config_server
           search-paths: 'greeting-service*'
 #          username: username
 #          password: password
